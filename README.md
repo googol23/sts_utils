@@ -28,7 +28,7 @@ python3 -m venv .venv
 # Linux/macOS:
 . .venv/bin/activate
 # Windows PowerShell instead: .venv\Scripts\Activate.ps1
-python -m pip install -e ./sts_utils -e ./geometry/geo_inspector
+python -m pip install -e ./sts_utils -e ./sts_geo_utils/geo_inspector
 ```
 
 For PyROOT workflows, use an environment where `import ROOT` already works; a new
@@ -67,7 +67,7 @@ and no initial commit is created automatically.
 
 Workspace callers import `sts_utils` directly; the former root-level `utils/`
 compatibility package has been removed. Install this checkout in each environment
-used by `sts_layout`, `metrology`, `module_test` or the workspace tests:
+used by `sts_geo_layout`, `sts_ladder_metrology`, `sts_module_test` or the workspace tests:
 
 ```sh
 # From the sts_tools working directory, with the intended environment activated:
@@ -76,7 +76,7 @@ python -m pip install -e ./sts_utils
 
 Use `from sts_utils import sts_naming`, `from sts_utils.sts_naming import ...`, or
 `from sts_utils.units import CM, MM`. The application-local
-`sts_metrology/metrology_db/utils/hashing.py` is unrelated and remains in place.
+`sts_metrology_db/utils/hashing.py` is unrelated and remains local to that utility.
 
 ## Development and packaging
 
